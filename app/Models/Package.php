@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
 {
-    use HasFactory;
-    public function truck_driver (){
-        return $this->belongsTo('App\Models\truck_driver');
-
-    }
+    public function truckers(){
+        return $this->belongsTo('App\Models\Trucker');
+}
 }

@@ -16,21 +16,19 @@ return new class extends Migration
             $table->integer('code');
             $table->string('description');
             $table->string('addressee');
-            $table->string('address');
-
-
-            //Atributos foraneos
-            $table->unsignedBigInteger('truck_driver_id')->nullable();
-
-            //referenciando la tabla users
-            $table->foreign('truck_driver_id')
-                ->references('id')
-                ->on('truck_drivers')->onDelete('set null');
-
+            $table->string('adress');
             $table->timestamps();
+
+             //Atributos foraneos
+             $table->unsignedBigInteger('truckers_id')->nullable();
+              //referenciando la tabla users
+            $table->foreign('truckers_id')
+            ->references('id')
+            ->on('truckers')->onDelete('set null');
+            
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
